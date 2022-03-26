@@ -15,8 +15,7 @@ class CryptoBlock {
     }
 
     proofOfWork(difficulty) {
-        while (
-            this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")) {
+        while ( this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0") ) {
                 this.nonce++;
                 this.hash = this.computeHash();
             }
@@ -61,8 +60,8 @@ let yourCoinNameCoin = new CryptoBlockchain();
 console.log('yourCoinName in mining.......');
 yourCoinNameCoin.addingNewBlock(
     new CryptoBlock(1, "25/11/2021", //change this date for testing.
-    {sender: "theSendersName", 
-    recipient: "Ta", 
-    quanity: 50}));
+    { sender: "theSendersName", 
+        recipient: "Ta", 
+        quanity: 50}));
 
 console.log(JSON.stringify(yourCoinNameCoin, null , 4));
